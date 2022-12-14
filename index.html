@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="Script.js"></script>
+    <title>Code</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex shiper">
+            <div class="item">X</div>
+            <div class="item">e</div>
+            <div class="item">n</div>
+            <div class="item">o</div>
+            <div class="item">p</div>
+            <div class="item">h</div>
+            <div class="item">a</div>
+            <div class="item">n</div>
+            <div class="item">e</div>
+            <div class="item">s</div>
+        </div>
+        <div class="flex key-area">
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="3"></div>
+        </div>
+        <button onclick="GetKey()">Decrypt</button>
+        <div class="flex Decrypt">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="calc">
+            <div class="title">
+                Calculator
+            </div>
+            <div class="inp">
+                <p>Hex</p>
+                <input type="text" maxlength="3" id="Hex" onchange="CalcTarget = document.getElementById('Hex')">
+            </div>
+            <div class="inp">
+                <p>Bin</p>
+                <input type="text" id="Bin" onchange="CalcTarget = document.getElementById('Bin')">
+            </div>
+            <div class="inp">
+                <p>Char</p>
+                <input type="text" id="Char" onchange="CalcTarget = document.getElementById('Char')">
+            </div>
+        </div>
+        <button onclick="Calc()">Convert</button>
+    </div>
+</body>
+
+</html>
