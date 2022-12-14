@@ -38,11 +38,18 @@ input{
     height: 10vmin;
 }
 
-.item>input {
+.item>input{
     width: 100%;
     border: none;
     font-size: calc(1vmin + 1vmax + 1vw);
     text-align: center;
+    text-transform: uppercase;
+}
+.key-area .item {
+    font-size: calc(1vmin + 1vmax + 1vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
 }
 
@@ -96,9 +103,42 @@ button:hover::before{
     font-size: 25px;
     width: 90%;
 }
+#Hex{
+    text-transform: uppercase;
+}
 .shiper .item, .Decrypt .item{
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: calc(1vmin + 1vmax + 1vw);
+}
+ul{
+    padding: 0;
+    list-style: none;
+}
+.Help-btn{
+    position: absolute;
+    top: 0; left: 0;
+    padding: 1vmin;
+    color: #2cc732;
+    font-size: calc(.5vmax + .5vmin + .5vw);
+    border: 1px solid #2cc732;
+    background-color: black;
+}
+.Help{
+    display: none;
+}
+.Help.active{
+    display: flex;
+    flex-direction: column;
+}
+.Key-theme{
+    max-width: 100%;
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+.Key-theme.active{
+    max-height: none;
+    height: auto;
 }

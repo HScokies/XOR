@@ -12,6 +12,16 @@
 </head>
 
 <body>
+    <a class="Help-btn" onclick="ShowHelp()">?</a>
+    <div class="Help">
+        <button id="truekey" onclick="GetTrueLen()">Скрыть лишние поля ключа</button>
+        <button id="rndChar" onclick="GetRandomChar()">Открыть случайную букву ключа</button>
+        <button onclick="showtip()">Открыть тему ключа</button>
+        <div class="Key-theme">
+            Ключом для расшифровки текста является древнегреческая школа натурфилософского периода,
+            к которой относился зашифрованный философ.
+        </div>
+    </div>
     <div class="container">
         <div class="flex shiper">
             <div class="item">X</div>
@@ -26,16 +36,16 @@
             <div class="item">s</div>
         </div>
         <div class="flex key-area">
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
-            <div class="item"><input type="text" maxlength="3"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
+            <div class="item"><input type="text" maxlength="2"></div>
         </div>
         <button onclick="GetKey()">Decrypt</button>
         <div class="flex Decrypt">
@@ -56,15 +66,15 @@
             </div>
             <div class="inp">
                 <p>Hex</p>
-                <input type="text" maxlength="3" id="Hex" onchange="CalcTarget = document.getElementById('Hex')">
+                <input type="text" maxlength="2" id="Hex" onchange="CalcTarget = document.getElementById('Hex')">
             </div>
             <div class="inp">
                 <p>Bin</p>
-                <input type="text" id="Bin" onchange="CalcTarget = document.getElementById('Bin')">
+                <input type="text" maxlength="7" id="Bin" onchange="CalcTarget = document.getElementById('Bin')">
             </div>
             <div class="inp">
                 <p>Char</p>
-                <input type="text" id="Char" onchange="CalcTarget = document.getElementById('Char')">
+                <input type="text" maxlength="1" id="Char" onchange="CalcTarget = document.getElementById('Char')">
             </div>
         </div>
         <button onclick="Calc()">Convert</button>

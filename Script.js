@@ -4,13 +4,6 @@ const Bin_TargetText = [];
 const Bin_TargetKey = [];
 Dec2Bin(TargetText, Bin_TargetText);
 Dec2Bin(TargetKey, Bin_TargetKey);
-// Test(TargetKey);
-// function Test(TargetKey){
-//     for(let i=0; i<TargetKey.length; i++){
-//         console.log(TargetKey.charCodeAt(i).toString(16));
-//     }
-// }
-console.log(Bin_TargetKey);
 const encrypted = Encryptor(Bin_TargetText, Bin_TargetKey);
 function Dec2Bin(Text, Array){
     for (let i=0; i<Text.length; i++){
@@ -63,6 +56,10 @@ function GetKey(){
         }
         key[i] = keyELEM.split("").reverse().join('');
     }
+    if (key.length < 10){
+        key[8] = key[0];
+        key[9] = key[1];
+    }
     Decrypt(encrypted, key);
 }
 
@@ -85,7 +82,6 @@ const Bin = document.getElementById('Bin');
 const Char = document.getElementById('Char');
 function Calc(){
     let Type = CalcTarget.id;
-    console.log(Type);
     switch (Type){
         case 'Hex':
         let bin = parseInt(CalcTarget.value,16).toString(2).split("").reverse().join("");
@@ -105,4 +101,42 @@ function Calc(){
             Hex.value = CalcTarget.value.charCodeAt(0).toString(16);
             Bin.value = CalcTarget.value.charCodeAt(0).toString(2);
     }
+}
+
+function ShowHelp(){
+    const container = document.querySelector('.container');
+    const help = document.querySelector('.Help');
+    if (!help.classList.contains('active')){
+        container.style.display = 'none';
+        help.classList.add('active');
+    }
+    else{
+        container.style.display = 'flex';
+        help.classList.remove('active');
+    }
+}
+function showtip(){
+    const tipcontainer = document.querySelector('.Key-theme');
+    if (!tipcontainer.classList.contains('active')){
+        tipcontainer.classList.add('active');
+    }
+    else{
+        tipcontainer.classList.remove('active');
+    }
+}
+function GetTrueLen(){
+    const btn = document.querySelector('#truekey');
+    btn.disabled = true;
+    btn.style.color = 'red';
+
+    input.removeChild(input.children[9]);
+    input.removeChild(input.children[8]);
+}
+function GetRandomChar(){
+    const btn = document.querySelector("#rndChar");
+    btn.disabled = true;
+    btn.style.color = 'red';
+    let index = Math.floor(Math.random() * input.children.length);
+    input.children[index].children[0].value = TargetKey[index].charCodeAt(0).toString(16);
+    input.children[index].children[0].setAttribute("readonly", "readonly");
 }
